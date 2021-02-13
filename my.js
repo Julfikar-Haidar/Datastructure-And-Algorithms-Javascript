@@ -35,21 +35,55 @@ The first item did not match. So move onto the next one.
     Then we perform the same action, dividing the right part of the array in 2, looking at the middle item, and we throw away part of the array.
  **/
 
-const binarySearch = (arr,key) => {
-    let start = 0;
-    let end = arr.length -1
+// const binarySearch = (arr,key) => {
+//     let start = 0;
+//     let end = arr.length -1
 
-    while (start <= end) {
-        let mid = Math.floor((start + end)/2)
-        if( arr[mid] === key){
-           return mid
-        }else if(  arr[mid] > key){
-           end = mid -1
-        }else{
-           start = mid + 1
-        }
-    }
-    return -1
+//     while (start <= end) {
+//         let mid = Math.floor((start + end)/2)
+//         if( arr[mid] === key){
+//            return mid
+//         }else if(  arr[mid] > key){
+//            end = mid -1
+//         }else{
+//            start = mid + 1
+//         }
+//     }
+//     return -1
+// }
+
+// console.log(binarySearch([1, 2, 3, 4, 5], 9))
+
+
+// selection sort 
+
+const selectionSort = (arrInput) => {
+
+   let n = arrInput.length
+
+   for (let i = 0; i < n; i++) {
+      // find the smallest number in the sub array
+     let min = i 
+     
+      for(let j= i + 1; j < n; j++) {
+         if(arrInput[j] < arrInput[min]) {
+            min = j;
+            console.log(j);
+         }
+      }
+
+      if(min != i) {
+         // swapping the elements
+
+         let temp = arrInput[i];
+         arrInput[i] = arrInput[min]
+         arrInput[min] = temp;
+      }
+   }
+   return arrInput
 }
 
-console.log(binarySearch([1, 2, 3, 4, 5], 9))
+let inputArr = [5, 2, 4, 6, 1, 3];
+console.log('87',inputArr);
+selectionSort(inputArr);
+console.log(inputArr);
