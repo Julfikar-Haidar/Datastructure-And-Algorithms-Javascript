@@ -57,33 +57,58 @@ The first item did not match. So move onto the next one.
 
 // selection sort 
 
-const selectionSort = (arrInput) => {
+// const selectionSort = (arrInput) => {
+
+//    let n = arrInput.length
+
+//    for (let i = 0; i < n; i++) {
+//       // find the smallest number in the sub array
+//      let min = i 
+     
+//       for(let j= i + 1; j < n; j++) {
+//          if(arrInput[j] < arrInput[min]) {
+//             min = j;
+//          }
+//       }
+
+//       if(min != i) {
+//          // swapping the elements
+
+//          let temp = arrInput[i];
+//          console.log(temp);
+//          arrInput[i] = arrInput[min]
+//          arrInput[min] = temp;
+//          // console.log(temp);
+         
+
+//       }
+//    }
+//    return arrInput
+// }
+
+// let inputArr = [5, 2, 4, 6, 1, 3];
+// console.log('87',inputArr);
+// selectionSort(inputArr);
+// console.log(inputArr);
+
+
+const bubbleSort = (arrInput) => {
 
    let n = arrInput.length
 
-   for (let i = 0; i < n; i++) {
-      // find the smallest number in the sub array
-     let min = i 
-     
-      for(let j= i + 1; j < n; j++) {
-         if(arrInput[j] < arrInput[min]) {
-            min = j;
-            console.log(j);
+   for(let i = 0; i < n; i++){
+      for(let j = 0; j < n -i-1 ; j++){
+         if(arrInput[j] > arrInput[j+1]){
+            let temp = arrInput[j]
+            arrInput[j] = arrInput[j+1]
+            arrInput[j+1] = temp
          }
       }
-
-      if(min != i) {
-         // swapping the elements
-
-         let temp = arrInput[i];
-         arrInput[i] = arrInput[min]
-         arrInput[min] = temp;
-      }
    }
+   console.log(arrInput)
    return arrInput
 }
 
-let inputArr = [5, 2, 4, 6, 1, 3];
-console.log('87',inputArr);
-selectionSort(inputArr);
-console.log(inputArr);
+const d = [2, 11, 3,5,9,0]
+bubbleSort(d)
+// console.log(d);
