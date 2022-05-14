@@ -2,11 +2,12 @@ function charCount(str) {
     var obj = {}
     for (var char of str) {
         if (isAlphaNumeric(char)) {
-            console.log('5', char)
+            // console.log('5', char)
             char = char.toLowerCase()
             obj[char] = ++obj[char] || 1
         }
     }
+    console.log('obj',obj)
     return obj
 }
 
@@ -15,11 +16,11 @@ function isAlphaNumeric(char) {
     if (!(code > 47 && code < 58) &&
         !(code > 64 && code < 91) &&
         !(code > 96 && code < 123)) {
-        console.log('18')
+        // console.log('18')
         return false
     }
-    console.log('21')
+    // console.log('21')
     return true
 }
 
-charCount('##!!!r')
+charCount('##!!!`rj Hhello')
